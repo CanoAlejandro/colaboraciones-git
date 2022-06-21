@@ -7,10 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+
   @Input() cardTitle: string = "Título";
   @Input() description: string = "Descripción"
   // Esto es un comentario
-  @Input() buttonText: string = "Guardar";
+
+  @Input() button: string = "boton";
+  @Input() url: string = "url";
 
   constructor() { }
   ngOnInit(): void {

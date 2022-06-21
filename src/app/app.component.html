@@ -41,49 +41,33 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-4">
-      <app-card [cardTitle]="dataCard[0].cardTitle" [description]="dataCard[0].description" [buttonText]="dataCard[0].buttonText" ></app-card>
-    </div>
-    <div class="col-4 ">
-      <app-card></app-card>
-    </div>
-    <div class="col-4">
-      <app-card></app-card>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-4">
-      <app-card></app-card>
-    </div>
-    <div class="col-4">
-      <app-card></app-card>
-    </div>
-    <div class="col-4">
-      <app-card></app-card>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
-        <input type="text" class="form-control" id="nombre" placeholder="Ingresa un nombre">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Apellidos:</label>
-        <input type="text" class="form-control" id="apellidos" placeholder="Ingresa tus apellidos">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Fecha de nacimiento:</label>
-        <input type="date" class="form-control" id="fecha_nac" placeholder="Ingresa una fecha de nacimiento">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Nacionalidad:</label>
-        <input type="text" class="form-control" id="nacionalidad" placeholder="Ingresa tu Nacionalidad">
-      </div>
+    <div class="col">
+      <form (ngSubmit)="addCard()">
 
-      <button type="button" class="btn btn-primary">Registrar</button>
-      <button type="button" class="btn btn-danger" style="margin-left: 10px;">Cancelar</button>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
+          <input name="cardTitle" type="text" [(ngModel)]="card.cardTitle" class="form-control" id="cardTitle" placeholder="Ingresa un nombre">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Descripcion:</label>
+          <input name="descripcion" type="text" [(ngModel)]="card.description" class="form-control" id="descripcion" placeholder="Ingresa la descripcion">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">URL:</label>
+          <input name="url" type="text" [(ngModel)]="card.url" class="form-control" id="url" placeholder="Ingresa la URL de la imagen">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="reset" class="btn btn-danger" style="margin-left: 10px;">Cancelar</button>
+      </form>
+
+    <div class="row">
+    <div class="col-4" *ngFor="let item of dataCard">
+      <app-card [cardTitle]="item.cardTitle" [description]="item.description" [url]="item.url" [button]="item.button"></app-card>
     </div>
+    </div>
+
+    
   <div class="col-6">
   <span class="badge bg-primary">Primary</span>
   <span class="badge bg-secondary">Secondary</span>

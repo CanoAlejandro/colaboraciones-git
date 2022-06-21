@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CardModel } from './models/card.model';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularApp';
-  dataCard: any[] = [
+  card: CardModel = new CardModel();
+  dataCard: CardModel[] = [
     {
       cardTitle: "Título 1",
       description: "Descripción 1",
-      buttonText: "Botón 1"
-    },
-    {
-      cardTitle: "Título 2",
-      description: "Descripción 2",
-      buttonText: "Botón 2"
-    },
-    {
-      cardTitle: "Título 3",
-      description: "Descripción 3",
-      buttonText: "Botón 3"
+      button: "Boton 1",
+      url: "https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/01_%C2%BFQu%C3%A9-puedo-hacer-si-mi-gato-est%C3%A1-triste-.png?itok=w67Nhubc"
     }
   ]
+  addCard() {
+  console.log(this.card);
+  this.dataCard.push(this.card);
 }
+}
+
+
+
