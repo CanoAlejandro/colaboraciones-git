@@ -17,9 +17,8 @@ export class AppComponent {
       url: "https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/01_%C2%BFQu%C3%A9-puedo-hacer-si-mi-gato-est%C3%A1-triste-.png?itok=w67Nhubc"
     }
   ]
-  addCard() {
-  console.log(this.card);
-  this.dataCard.push(this.card);
+  addCard(card: CardModel) {
+  this.dataCard.push(Object.assign({},card));
 }
 }
 
