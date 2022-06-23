@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">LowRider</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -39,29 +39,4 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      
-      <app-form-card (envioCard)="addCard($event)"></app-form-card>
-
-    <div class="row">
-    <div class="col-4" *ngFor="let item of dataCard">
-      <app-card [cardTitle]="item.cardTitle" [description]="item.description" [url]="item.url" [button]="item.button"></app-card>
-    </div>
-    </div>
-
-    
-  <div class="col-6">
-  <span class="badge bg-primary">Primary</span>
-  <span class="badge bg-secondary">Secondary</span>
-  <span class="badge bg-success">Success</span>
-  <span class="badge bg-danger">Danger</span>
-  <span class="badge bg-warning">Warning</span>
-  <span class="badge bg-info">Info</span>
-  <span class="badge bg-light">Light</span>
-  <span class="badge bg-dark">Dark</span>
-  </div>
-  </div>
-</div>
-
+<router-outlet></router-outlet>
